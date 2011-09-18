@@ -1,2 +1,2 @@
-debian/namecoin.conf etc
+debian/namecoin.conf etc/namecoind
 namecoind usr/bin

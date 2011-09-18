@@ -16,11 +16,12 @@
 # Author: Marcel Koßin <marcel@kossin.info>
 
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
+UNCONFIGURED="yes" # Change this defaults value in /etc/default/namecoind
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="NameCoin Daemon"
 NAME=namecoind
 DAEMON=/usr/bin/namecoind
-DAEMON_ARGS="-daemon -server -conf=/etc/namecoind/namecoind.conf -pid=/var/run/namecoind.pid -datadir=/var/namecoind"
+DAEMON_ARGS="-daemon -server -conf=/etc/namecoind/namecoin.conf -pid=/var/run/namecoind.pid -datadir=/var/namecoind"
 PIDFILE=/var/run/$NAME.pid
 CHUID=namecoind:namecoind
 SCRIPTNAME=/etc/init.d/$NAME

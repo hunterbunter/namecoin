@@ -6,8 +6,5 @@
 # This is a POSIX shell fragment
 #
 
-# Additional options that are passed to the Daemon.
-DAEMON_OPTS="-server -daemon"
-
 # Set this option to no as soon as you have configured /etc/namedoind/namecoin.conf
 UNCONFIGURED="yes"
