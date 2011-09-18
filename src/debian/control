@@ -1,0 +1,19 @@
+Source: namecoind
+Section: net-p2p
+Priority: extra
+Maintainer: Marcel Koßin <marcel@kossin.info>
+Build-Depends: debhelper (>= 7.0.50~), build-essential, libgtk2.0-dev, libssl-dev, libdb++-dev, libdb-dev, libboost-all-dev
+Standards-Version: 3.9.1
+Homepage: http://www.dot-bit.org
+#Vcs-Git: git://git.debian.org/collab-maint/namecoind.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/namecoind.git;a=summary
+
+Package: namecoind
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Namecoin is a peer-to-peer generic name/value datastore
+ Namecoin is a peer-to-peer generic name/value datastore system based on Bitcoin.
+ It allows you to :
+ * Register and manage domains (.bit currently).
+ * Exert full control over your domains (no possible external control!).
+ * Trade and transact namecoins, the digital currency NMC.
