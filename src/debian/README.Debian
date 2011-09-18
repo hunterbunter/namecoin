@@ -3,17 +3,20 @@ has been tested on Ubuntu 10.04.3 so far.
 
 Follow this steps to build and install the Debian Package:
 
-apt-get install debhelper        \
-                build-essential  \
-                libssl-dev       \
-                libdb4.8++-dev   \
-                libdb-dev        \
-                libboost-all-dev \
-                libglib2.0-dev
-cd src
+sudo apt-get install debhelper        \
+                     build-essential  \
+                     libssl-dev       \
+                     libdb4.8++-dev   \
+                     libdb-dev        \
+                     libboost-all-dev \
+                     libglib2.0-dev
+
+
+Go to Sourcedir src
+
 dpkg-buildpackage
 cd ..
-dpkg -i namecoind*.deb
+sudo dpkg -i namecoind*.deb
 
 
 Configuration files
@@ -32,3 +35,11 @@ Data Dir
 
 The namecoin blockchain is stored at /var/namecoind
 
+Access to namecoind
+===================
+
+Create ~/.namecoin and link /etc/namecoind/namecoin.conf to the bitcoin.conf
+
+mkdir ~/.namecoin
+cd ~/.namecoin
+ln -sf /etc/namecoind/namecoin.conf bitcoin.conf
