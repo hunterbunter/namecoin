@@ -1,0 +1,34 @@
+You can use Debian buildpackage in order to compile a namecoind. This
+has been tested on Ubuntu 10.04.3 so far.
+
+Follow this steps to build and install the Debian Package:
+
+apt-get install debhelper        \
+                build-essential  \
+                libssl-dev       \
+                libdb4.8++-dev   \
+                libdb-dev        \
+                libboost-all-dev \
+                libglib2.0-dev
+cd src
+dpkg-buildpackage
+cd ..
+dpkg -i namecoind*.deb
+
+
+Configuration files
+===================
+
+Please adapt the configuration file /etc/namecoind/namecoin.conf to your
+needs.
+
+Starting/Stopping the server
+===================
+
+Please use the init script /etc/init.d/namecoind start|stop
+
+Data Dir
+========
+
+The namecoin blockchain is stored at /var/namecoind
+

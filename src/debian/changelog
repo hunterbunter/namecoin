@@ -1,5 +1,6 @@
-namecoind (0.3.24.62-1) unstable; urgency=low
+namecoind (0.3.24.63) unstable; urgency=high
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Corrects the timetravel (2015-2016 retarget) bug starting at the first retarget after block 19200.
+  * This version will fork testnet at block 4032 (second retarget).
 
  -- Marcel Koßin <marcel@kossin.info>  Sat, 17 Sep 2011 17:27:21 +0200

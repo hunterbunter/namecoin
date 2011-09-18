@@ -16,7 +16,6 @@
 # Author: Marcel Koßin <marcel@kossin.info>
 
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
-UNCONFIGURED="yes" # Change this defaults value in /etc/default/namecoind
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="NameCoin Daemon"
 NAME=namecoind
@@ -44,23 +43,18 @@ SCRIPTNAME=/etc/init.d/$NAME
 #
 do_start()
 {
-	if [$UNCONFIGURED != "no"]; then
-		echo "Please configure your namecoind and set $UNCONFIGURES to 'no' in /etc/default/namecoind"
-		exit 3
-	else
-		# Return
-		#   0 if daemon has been started
-		#   1 if daemon was already running
-		#   2 if daemon could not be started
-		start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON --test > /dev/null \
-			|| return 1
-		start-stop-daemon --start --quiet --chuid $CHUID --pidfile $PIDFILE --exec $DAEMON -- \
-			$DAEMON_ARGS \
-			|| return 2
-		# Add code here, if necessary, that waits for the process to be ready
-		# to handle requests from services started subsequently which depend
-		# on this one.  As a last resort, sleep for some time.
-	fi
+	# Return
+	#   0 if daemon has been started
+	#   1 if daemon was already running
+	#   2 if daemon could not be started
+	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON --test > /dev/null \
+		|| return 1
+	start-stop-daemon --start --quiet --chuid $CHUID --pidfile $PIDFILE --exec $DAEMON -- \
+		$DAEMON_ARGS \
+		|| return 2
+	# Add code here, if necessary, that waits for the process to be ready
+	# to handle requests from services started subsequently which depend
+	# on this one.  As a last resort, sleep for some time.
 }
 
 #
